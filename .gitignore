@@ -1,0 +1,8 @@
+node_modules
+dist
+.tmp
+.sass-cache
+client/app/vendor
+.idea
+server/start
+server/startprod
