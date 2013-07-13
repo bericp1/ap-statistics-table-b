@@ -22,6 +22,7 @@ prompt.get({
     preview: true,
     regex: /app\-name\-here/gi,
     replacement: result.name,
+    paths: ['.'],
     recursive: true,
     silent: false
   });
