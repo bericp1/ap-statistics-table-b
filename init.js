@@ -29,6 +29,6 @@ prompt.get({
   });
 
   //Kill myself
-  fs.unlink(require('path').join(__dirname, 'init.js'));
+  require('fs').unlink(require('path').join(__dirname, 'init.js'));
 
 });
