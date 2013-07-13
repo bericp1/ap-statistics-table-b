@@ -1,3 +1,3 @@
-angular.module('app-name-here').controller('TestCtrl', function(){
+angular.module('app-name-here').controller('TestCtrl', function($scope){
   $scope.test = "Hey, Test!"
 });
