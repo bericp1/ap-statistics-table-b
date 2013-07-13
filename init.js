@@ -19,17 +19,16 @@ prompt.get({
 }, function(err, result){
 
   replace({
-    preview: true,
     regex: /app\-name\-here/gi,
     replacement: result.name,
     paths: ['.'],
-    exclude: 'node_modules/*',
+    exclude: 'node_modules/*,client/app/vendor/*',
     recursive: true,
     silent: false,
     fileColor: 'white'
   });
 
   //Kill myself
-  //fs.unlink(require('path').join(__dirname, 'init.js'));
+  fs.unlink(require('path').join(__dirname, 'init.js'));
 
 });
