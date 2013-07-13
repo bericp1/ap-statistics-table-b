@@ -23,8 +23,10 @@ prompt.get({
     regex: /app\-name\-here/gi,
     replacement: result.name,
     paths: ['.'],
+    exclude: 'node_modules/*',
     recursive: true,
-    silent: false
+    silent: false,
+    fileColor: 'white'
   });
 
   //Kill myself
