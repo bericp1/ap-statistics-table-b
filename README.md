@@ -1,5 +1,10 @@
 # Skeleton for angular client + node server JS App
 
+## Getting Started
+
+1. `npm install`
+2. `bower install`
+
 ## Testing
 
 Scripts for unit testing will be loaded (in both client and server) from {client|server}/test/mock first and then from
