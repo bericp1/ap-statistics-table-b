@@ -1,3 +1,0 @@
-[merge "local"]
-  name = keep the local copy in case of conflict
-  driver = true %O %A %B

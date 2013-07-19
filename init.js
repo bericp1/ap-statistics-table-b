@@ -42,4 +42,5 @@ prompt.get({
   //Add me to .gitignore
   fs.appendFile('.gitignore', '\ninit.js', errHandler);
 
+
 });
