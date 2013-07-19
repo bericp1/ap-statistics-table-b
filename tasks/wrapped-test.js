@@ -4,6 +4,7 @@ module.exports = function (grunt) {
   var spawn = require('child_process').spawn;
   var util = require('util');
   var path = require('path');
+  var fs = require('fs');
   var appConf = require('./../app.conf.js');
 
   //Custom logging function
@@ -49,11 +50,6 @@ module.exports = function (grunt) {
         return;
       }
 
-      var runTests = function(){
-        done(true);
-        return true;
-      };
-
       var conditionalExit = function (exitCode) {
         server.stop();
         var ret = true;
@@ -67,40 +63,44 @@ module.exports = function (grunt) {
 
         var karmaServer = require('karma').server;
 
-        runTests = function(){
+        server.start(function(){
           karmaServer.start({
             configFile: path.join(appConf.clientTest, 'karma.conf.js')
           }, conditionalExit);
-        };
+        });
 
       }else if(component === 'server'){
 
-        var jasmineArgs = appConf.serverTestArgs.concat([
-          'mock/',
-          'spec/'
-        ]);
+        fs.exists(appConf.serverTest, function(exists){
+          if(exists){
+            var jasmineArgs = appConf.serverTestArgs.concat([
+              'mock/',
+              'spec/'
+            ]);
 
-        runTests = function() {
-          var jasmineNode = spawn(
-            appConf.serverTestExec,
-            jasmineArgs,
-            {
-              'cwd': appConf.serverTest,
-              'env': process.env
-            }
-          );
-          jasmineNode.stdout.on('data', log);
-          jasmineNode.stderr.on('data', log);
-          jasmineNode.on('exit', conditionalExit);
-          jasmineNode.on('error', function(err){
-            log(err);
-            conditionalExit(-1);
-          });
-        };
-
+            server.start(function() {
+              var jasmineNode = spawn(
+                appConf.serverTestExec,
+                jasmineArgs,
+                {
+                  'cwd': appConf.serverTest,
+                  'env': process.env
+                }
+              );
+              jasmineNode.stdout.on('data', log);
+              jasmineNode.stderr.on('data', log);
+              jasmineNode.on('exit', conditionalExit);
+              jasmineNode.on('error', function(err){
+                log(err);
+                conditionalExit(-1);
+              });
+            });
+          }else{
+            log('No server tests. Skipping.'.orange);
+            done(true);
+          }
+        });
       }
-
-      server.start(runTests);
     }
   );
 };
