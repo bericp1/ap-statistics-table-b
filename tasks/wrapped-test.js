@@ -21,10 +21,6 @@ module.exports = function (grunt) {
 
   var server = require(path.join(appConf.serverApp, 'server.js'));
   var port = appConf.serverTestPort || process.env.PORT || -1;
-  server.init({
-    port: port,
-    environment: 'development'
-  });
 
   grunt.registerTask(
     'wrapped-test',
@@ -32,6 +28,10 @@ module.exports = function (grunt) {
       'the tests have access to the actual dev server for real testing',
     function(component){
       var done = this.async();
+      server.init({
+        port: port,
+        environment: 'development'
+      });
 
       if(port === -1){
         grunt.log.error('A PORT env or app.conf.js variable must be set to run server tests');

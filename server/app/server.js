@@ -18,6 +18,10 @@ var log = function () {
 var init = function (config) {
   'use strict';
 
+  if(server.get('initiated') && config == server.get('initial config')){
+    return this;
+  }
+
   log('Initiating server...');
 
   if(typeof config !== 'object'){
@@ -56,6 +60,7 @@ var init = function (config) {
   // Server logic/routes go here
 
   server.set('initiated', true);
+  server.set('initial config', config);
   return this;
 };
 
