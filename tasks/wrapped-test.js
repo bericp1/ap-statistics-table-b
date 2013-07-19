@@ -7,8 +7,6 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var appConf = require('./../app.conf.js');
 
-  require('colors');
-
   //Custom logging function
   var log = function(){
     var args = Array.prototype.slice.call(arguments);
@@ -98,7 +96,7 @@ module.exports = function (grunt) {
               });
             });
           }else{
-            log('No server tests. Skipping.'.orange);
+            log('No server tests. Skipping.'.yellow);
             done(true);
           }
         });
