@@ -39,8 +39,4 @@ prompt.get({
   //Kill myself
   fs.unlink(require('path').join(__dirname, 'init.js'), errHandler);
 
-  //Add me to .gitignore
-  fs.appendFile('.gitignore', '\ninit.js', errHandler);
-
-
 });
