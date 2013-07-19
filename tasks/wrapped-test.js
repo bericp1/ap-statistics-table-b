@@ -7,6 +7,8 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var appConf = require('./../app.conf.js');
 
+  require('colors');
+
   //Custom logging function
   var log = function(){
     var args = Array.prototype.slice.call(arguments);
