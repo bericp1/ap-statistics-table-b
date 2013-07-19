@@ -19,7 +19,7 @@ var log = function () {
 var init = function (config) {
   'use strict';
 
-  if(server.get('initiated') && config == server.get('initial config')){
+  if(server.get('initiated') && config === server.get('initial config')){
     return this;
   }
 
