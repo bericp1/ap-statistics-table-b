@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Initiates the project and offs itself.
  */
