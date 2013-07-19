@@ -8,12 +8,13 @@ var server = express();
 //Custom logging function
 var log = function () {
   'use strict';
-  console.log('[server] ' + util.format.apply(this, arguments));
+  var pre = server.get('log prefix') + '';
+  console.log(pre + '[server] ' + util.format.apply(this, arguments));
 };
 
 /**
  * Configures the server
- * @param {{port, environment}} config
+ * @param {{port, environment, logPrefix}} config
  */
 var init = function (config) {
   'use strict';
@@ -21,11 +22,15 @@ var init = function (config) {
   if(server.get('initiated') && config == server.get('initial config')){
     return this;
   }
-
+  console.log('');
   log('Initiating server...');
 
   if(typeof config !== 'object'){
     config = {};
+  }else{
+    if(typeof config.logPrefix === 'string'){
+      server.set('log prefix', config.logPrefix);
+    }
   }
 
   //Some server config values

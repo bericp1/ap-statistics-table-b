@@ -7,6 +7,8 @@ module.exports = function (grunt) {
   var fs = require('fs');
   var appConf = require('./../app.conf.js');
 
+  var logPrefix = '[grunt.wrapped-test]';
+
   //Custom logging function
   var log = function(){
     var args = Array.prototype.slice.call(arguments);
@@ -16,7 +18,7 @@ module.exports = function (grunt) {
       }
     }
     var str = util.format.apply(this, args);
-    console.log( '[grunt.wrapped-test] ' + str );
+    console.log( logPrefix + str );
   };
 
   var server = require(path.join(appConf.serverApp, 'server.js'));
@@ -30,7 +32,8 @@ module.exports = function (grunt) {
       var done = this.async();
       server.init({
         port: port,
-        environment: 'development'
+        environment: 'development',
+        logPrefix: logPrefix
       });
 
       if(port === -1){
