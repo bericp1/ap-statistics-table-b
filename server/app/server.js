@@ -22,8 +22,6 @@ var init = function (config) {
   if(server.get('initiated') && config == server.get('initial config')){
     return this;
   }
-  console.log('');
-  log('Initiating server...');
 
   if(typeof config !== 'object'){
     config = {};
@@ -32,6 +30,9 @@ var init = function (config) {
       server.set('log prefix', config.logPrefix);
     }
   }
+
+  console.log('');
+  log('Initiating server...');
 
   //Some server config values
   server.set('env', config.environment || process.env.NODE_ENV || 'development');

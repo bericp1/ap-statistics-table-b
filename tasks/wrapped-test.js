@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       }
     }
     var str = util.format.apply(this, args);
-    console.log( logPrefix + str );
+    console.log( logPrefix + ' ' + str );
   };
 
   var server = require(path.join(appConf.serverApp, 'server.js'));
