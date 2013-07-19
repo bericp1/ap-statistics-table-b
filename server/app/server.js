@@ -1,6 +1,6 @@
 //Dependencies
 var express = require('express');
-var util    = require('util');
+var util = require('util');
 
 //Express App
 var server = express();
