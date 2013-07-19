@@ -8,7 +8,7 @@ var server = express();
 //Custom logging function
 var log = function () {
   'use strict';
-  var pre = server.get('log prefix') + '';
+  var pre = server.get('log prefix') || '';
   console.log(pre + '[server] ' + util.format.apply(this, arguments));
 };
 
