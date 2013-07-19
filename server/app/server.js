@@ -35,7 +35,7 @@ var init = function (config) {
   log('Initiating server...');
 
   //Some server config values
-  server.set('env', config.environment || process.env.NODE_ENV || 'development');
+  server.set('env', config.environment || process.env.NODE_ENV || 'production');
   server.set('port', config.port || process.env.PORT || -1);
 
   if(server.get('port') === -1){
