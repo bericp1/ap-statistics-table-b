@@ -5,6 +5,11 @@
 
 var prompt = require('prompt');
 var replace = require('replace');
+var fs = require('fs');
+
+var errHandler = function(err){
+  if(err) throw err;
+};
 
 prompt.message = '';
 prompt.delimeter = '';
@@ -19,6 +24,8 @@ prompt.get({
   }
 }, function(err, result){
 
+  errHandler(err);
+
   replace({
     regex: /app\-name\-here/gi,
     replacement: result.name,
@@ -30,6 +37,9 @@ prompt.get({
   });
 
   //Kill myself
-  require('fs').unlink(require('path').join(__dirname, 'init.js'));
+  fs.unlink(require('path').join(__dirname, 'init.js'), errHandler);
+
+  //Add me to .gitignore
+  fs.appendFile('.gitignore', '\ninit.js', errHandler);
 
 });

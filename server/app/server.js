@@ -82,6 +82,7 @@ var start = function (readyCallback) {
     }
     log('Starting server...');
     this.serverInstance = server.listen(server.get('port'), function () {
+      console.log('');
       log('Server running on port %d in %s mode', server.get('port'), server.get('env'));
       if (readyCallback) {
         readyCallback();
