@@ -42,15 +42,15 @@ branch
 
 One might consider doing some version tagging of some sort at this point while on the `master`/`dev` branch.
 
-  git checkout master
-  git merge dev             # Only If you work off of a dev branch
-  git merge -s ours deploy  # Fake merge of deploy to master
-  git checkout deploy
-  git merge master          # Overwrite everything in deploy branch (thanks to above fake merge)
-  grunt build
-  git add -A
-  git commit -m 'Deploying to heroku'
-  git push heroku deploy:master
+    git checkout master
+    git merge dev             # Only If you work off of a dev branch
+    git merge -s ours deploy  # Fake merge of deploy to master
+    git checkout deploy
+    git merge master          # Overwrite everything in deploy branch (thanks to above fake merge)
+    grunt build
+    git add -A
+    git commit -m 'Deploying to heroku'
+    git push heroku deploy:master
 
 ### Testing
 
