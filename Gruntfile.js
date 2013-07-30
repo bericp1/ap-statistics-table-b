@@ -263,8 +263,30 @@ module.exports = function (grunt) {
         src: '<%= appConf.clientApp %>/templates/**.html',
         dest: '<%= appConf.clientTmp %>/scripts/templates.js'
       }
+    },
+    shell: {
+      bowerupdate: {
+        command: 'bower update',
+        options: {
+          stdout: true,
+          failOnError: true
+        }
+      },
+      init: {
+        command: 'node init.js',
+        options: {
+          stdout: true,
+          stdin: true,
+          failOnError: true
+        }
+      }
     }
   });
+
+  grunt.registerTask('init', [
+    'shell:bowerupdate',
+    'shell:init'
+  ]);
 
   grunt.registerTask('dev', [
     'clean:temp',
@@ -290,6 +312,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'shell:bowerupdate',
     'clean:dist',
     'jshint',
     'test',
