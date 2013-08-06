@@ -91,8 +91,8 @@ module.exports = function (grunt) {
               '.sass-cache',
               '*.log',
               'README.md',
-              '<%= appConf.dist %>/js/templates.js'
-              '!<%= appConf.client %>/app/vendor',
+              '<%= appConf.dist %>/js/templates.js',
+              '!<%= appConf.client %>/app/vendor'
             ]
           }
         ]
