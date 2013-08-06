@@ -6,3 +6,4 @@ client/app/vendor
 .idea
 server/start
 server/startprod
+npm-debug.log
