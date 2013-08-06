@@ -272,21 +272,13 @@ module.exports = function (grunt) {
           stdout: true,
           failOnError: true
         }
-      },
-      init: {
-        command: 'node init.js',
-        options: {
-          stdout: true,
-          stdin: true,
-          failOnError: true
-        }
       }
     }
   });
 
   grunt.registerTask('init', [
     'shell:bowerupdate',
-    'shell:init'
+    'init-rename'
   ]);
 
   grunt.registerTask('dev', [

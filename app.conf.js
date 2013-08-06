@@ -4,6 +4,7 @@
 
 var path = require('path');
 
+exports["root"]           = __dirname;
 exports["client"]			    = path.join( __dirname, "client" );
 exports["clientApp"]		  = path.join( exports["client"], "app" );
 exports["clientTmp"]		  = path.join( exports["client"], ".tmp" );
