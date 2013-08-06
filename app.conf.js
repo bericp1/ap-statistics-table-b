@@ -14,6 +14,6 @@ exports["serverApp"]      = path.join( exports["server"], "app" );
 exports["serverTest"]     = path.join( exports["server"], "test" );
 exports["serverTestPort"] = 2455;
 exports["serverPort"]     = 8000;
-exports["serverTestArgs"] = ['--forceexit', '--verbose', '--color', '--captureExceptions'];
+exports["serverTestArgs"] = ['--forceexit', '--verbose', '--color', '--captureExceptions', '--growl'];
 exports["serverTestExec"] = path.join( __dirname, 'node_modules/jasmine-node/bin/jasmine-node' );
 exports["dist"]				    = path.join( __dirname, "public" );
