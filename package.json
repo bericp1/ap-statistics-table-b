@@ -21,7 +21,7 @@
     "grunt-google-cdn": ">=0.1.1",
     "grunt-ngmin": "~0.0.2",
     "matchdep": "~0.1.1",
-    "jasmine-node": "~1.8.1",
+    "jasmine-node": "~1.11.0",
     "karma": "~0.8.6",
     "supertest": "~0.7.0",
     "connect-livereload": "~0.2.0",
