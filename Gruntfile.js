@@ -300,6 +300,7 @@ module.exports = function (grunt) {
   grunt.registerTask('client-test', [
     'clean:temp',
     'compass:dev',
+    'ngtemplates:dev',
     'wrapped-test:client'
   ]);
 

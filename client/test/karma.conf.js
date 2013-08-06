@@ -5,6 +5,7 @@ tmp.appConf = require(tmp.path.join(__dirname, '../../app.conf.js'));
 tmp.clientPath = tmp.appConf.client;
 tmp.clientAppPath = tmp.appConf.clientApp;
 tmp.clientTestPath = tmp.appConf.clientTest;
+tmp.clientTempPath = tmp.appConf.clientTmp;
 
 // Karma configuration
 
@@ -15,10 +16,11 @@ basePath = tmp.appConf.client;
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  tmp.path.join( tmp.clientAppPath, 'vendor/angular/angular.js' ),
-  tmp.path.join( tmp.clientAppPath, 'vendor/angular-mocks/angular-mocks.js' ),
-  tmp.path.join( tmp.clientAppPath, 'scripts/*.js' ),
-  tmp.path.join( tmp.clientAppPath, 'scripts/**/*.js' ),
+  tmp.path.join( tmp.clientAppPath,  'vendor/angular/angular.js' ),
+  tmp.path.join( tmp.clientAppPath,  'vendor/angular-mocks/angular-mocks.js' ),
+  tmp.path.join( tmp.clientTempPath, 'scripts/templates.js' ),
+  tmp.path.join( tmp.clientAppPath,  'scripts/*.js' ),
+  tmp.path.join( tmp.clientAppPath,  'scripts/**/*.js' ),
   tmp.path.join( tmp.clientTestPath, 'mock/**/*.js' ),
   tmp.path.join( tmp.clientTestPath, 'spec/**/*.js' )
 ];
@@ -28,7 +30,7 @@ exclude = [];
 
 // test results reporter to use
 // possible values: dots || progress || growl
-reporters = ['progress', 'growl'];
+reporters = ['progress'];
 
 // web server port
 port = 8080;
