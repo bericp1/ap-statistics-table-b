@@ -209,11 +209,6 @@ module.exports = function (grunt) {
         ]
       }
     },
-    cdnify: {
-      dist: {
-        html: ['<%= appConf.clientApp %>/**.html']
-      }
-    },
     ngmin: {
       dist: {
         files: [
@@ -326,7 +321,6 @@ module.exports = function (grunt) {
     'compass:dist',
     'useminPrepare',
     'imagemin',
-    'cdnify',
     'htmlmin',
     'ngtemplates:dist',
     'concat',
