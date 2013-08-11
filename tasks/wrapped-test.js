@@ -76,6 +76,11 @@ module.exports = function (grunt) {
 
         fs.exists(appConf.serverTest, function(exists){
           if(exists){
+            try{
+              fs.mkdirSync(path.join(appConf.serverTest, 'mock'));
+              fs.mkdirSync(path.join(appConf.serverTest, 'spec'));
+            }catch(e){}
+
             var jasmineArgs = appConf.serverTestArgs.concat([
               'mock/',
               'spec/'
