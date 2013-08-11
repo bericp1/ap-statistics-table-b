@@ -7,3 +7,5 @@ client/app/vendor
 server/start
 server/startprod
 npm-debug.log
+
+.DS_Store
