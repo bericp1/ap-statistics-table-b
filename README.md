@@ -36,7 +36,6 @@ branch
       * `test/`:
         * `mock/`: Unit testing mocks
         * `spec/`: The actual test specs
-   * `init.js`: An init script use in the `grunt init` task to replace `app-name-here` throughout the project to whatever the user wants. (Will eventually be made into a grunt custom task)
 
 ### Deploying to Heroku
 
