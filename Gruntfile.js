@@ -83,7 +83,6 @@ module.exports = function (grunt) {
               '<%= appConf.client %>',
               '.bowerrc',
               '.editorconfig',
-              '.jshintrc',
               'bower.json',
               'app.conf.js',
               'Gruntfile.js',
@@ -107,14 +106,42 @@ module.exports = function (grunt) {
     //Build-related Tasks
     jshint: {
       options: {
-        jshintrc: '.jshintrc'
+        node: true,
+        esnext: true,
+        es5: true,
+        bitwise: true,
+        camelcase: true,
+        eqeqeq: true,
+        forin: true,
+        immed: true,
+        indent: 2,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        nonew: true,
+        quotmark: 'single',
+        regexp: true,
+        strict: true,
+        trailing: true,
+        undef: true,
+        unused: true
       },
-      all: [
+      dev: [
         'Gruntfile.js',
-        'tasks/{,*/}*.js',
-        '<%= appConf.clientApp %>/scripts/{,*/}*.js',
-        '<%= appConf.serverApp %>/{,*/}*.js'
-      ]
+        'tasks/{,*/}*.js'
+      ],
+      client: {
+        src: ['<%= appConf.clientApp %>/scripts/{,*/}*.js'],
+        options: {
+          browser: true,
+          node: false,
+          esnext: false,
+          globals: {
+            angular: false
+          }
+        }
+      },
+      server: ['<%= appConf.serverApp %>/{,*/}*.js']
     },
     compass: {
       options: {
