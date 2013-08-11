@@ -95,6 +95,7 @@ module.exports = function (grunt) {
       },
       templates: [
         '<%= appConf.dist %>/scripts/templates.js',
+        '<%= appConf.dist %>/templates',
         '<%= appConf.clientApp %>/scripts/templates.js',
         '<%= appConf.clientTmp %>/scripts/templates.js'
       ]
