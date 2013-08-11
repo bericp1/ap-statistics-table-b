@@ -25,7 +25,7 @@ branch
          * etc.
        * `styles/`: SCSS styles go here
        * `templates/`: The html templates go here
-       * `vendor/`: Bower installs libraries here
+       * `vendor/`: For Third-party libraries
      * `test/`:
        * `mock/`: Unit testing mocks
        * `spec/`: The actual test specs

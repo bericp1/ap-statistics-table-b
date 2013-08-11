@@ -9,7 +9,6 @@ exports["client"]			    = path.join( __dirname, "client" );
 exports["clientApp"]		  = path.join( exports["client"], "app" );
 exports["clientTmp"]		  = path.join( exports["client"], ".tmp" );
 exports["clientTest"]	    = path.join( exports["client"], "test" );
-exports["clientBower"]	  = path.join( exports["client"], "bower.json" );
 exports["server"]         = path.join( __dirname, "server" );
 exports["serverApp"]      = path.join( exports["server"], "app" );
 exports["serverTest"]     = path.join( exports["server"], "test" );

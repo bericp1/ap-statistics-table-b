@@ -81,9 +81,7 @@ module.exports = function (grunt) {
             src: [
               '<%= appConf.server %>',
               '<%= appConf.client %>',
-              '.bowerrc',
               '.editorconfig',
-              'bower.json',
               'app.conf.js',
               'Gruntfile.js',
               'tasks',
@@ -291,20 +289,10 @@ module.exports = function (grunt) {
         src: '<%= appConf.clientApp %>/templates/**.html',
         dest: '<%= appConf.clientTmp %>/scripts/templates.js'
       }
-    },
-    shell: {
-      bowerupdate: {
-        command: 'bower update',
-        options: {
-          stdout: true,
-          failOnError: true
-        }
-      }
     }
   });
 
   grunt.registerTask('init', [
-    'shell:bowerupdate',
     'init-rename'
   ]);
 
@@ -333,7 +321,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'shell:bowerupdate',
     'clean:dist',
     'jshint',
     'test',
