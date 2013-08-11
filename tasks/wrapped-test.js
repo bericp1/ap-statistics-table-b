@@ -18,8 +18,8 @@ module.exports = function (grunt) {
       }
     }
     var str = util.format.apply(this, args);
-    str = str.replace(/\n/g, '\n' + logPrefix + ' ');
-    str = str.replace(/^/, logPrefix + ' ');
+    str = str.replace(/\n/g, '\n' + logPrefix.white + ' ');
+    str = str.replace(/^/, logPrefix.white + ' ');
     console.log( str );
   };
 
