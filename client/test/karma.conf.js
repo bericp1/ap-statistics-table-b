@@ -16,8 +16,8 @@ basePath = tmp.appConf.client;
 files = [
   JASMINE,
   JASMINE_ADAPTER,
-  tmp.path.join( tmp.clientAppPath,  'vendor/angular/angular.js' ),
-  tmp.path.join( tmp.clientAppPath,  'vendor/angular-mocks/angular-mocks.js' ),
+  tmp.path.join( tmp.clientAppPath,  'vendor/unstable-angular-complete/angular.js' ),
+  tmp.path.join( tmp.clientAppPath,  'vendor/unstable-angular-complete/angular-mocks.js'),
   tmp.path.join( tmp.clientTempPath, 'scripts/templates.js' ),
   tmp.path.join( tmp.clientAppPath,  'scripts/*.js' ),
   tmp.path.join( tmp.clientAppPath,  'scripts/**/*.js' ),
