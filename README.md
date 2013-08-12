@@ -28,13 +28,13 @@ branch
    * `test/`:
      * `mock/`: Unit testing mocks
      * `spec/`: The actual test specs
-  * `/server/`:
-    * `app/`: The back end of the app (using express.js)
-      * `server.js`: Server logic (will eventually be split into sep. directories for routes, etc.)
-      * `start.js`: Quick start script that loads, inits, and starts the server from `server.js`
-    * `test/`:
-      * `mock/`: Unit testing mocks
-      * `spec/`: The actual test specs
+ * `/server/`:
+   * `app/`: The back end of the app (using express.js)
+     * `server.js`: Server logic (will eventually be split into sep. directories for routes, etc.)
+     * `start.js`: Quick start script that loads, inits, and starts the server from `server.js`
+   * `test/`:
+     * `mock/`: Unit testing mocks
+     * `spec/`: The actual test specs
 
 ### Deploying to Heroku
 
