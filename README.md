@@ -14,28 +14,27 @@ branch
 
 ### Structure
 
- * `/`:
-   * `client/`:
-     * `app/`: The front end of the app (using Angular)
-       * `index.html`: The single page that is served to the browser
-       * `scripts/`:
-         * `app.js`: The main angular app/module logic
-         * `controllers/`: Angular controllers
-         * `directives/`: Angular directives
-         * etc.
-       * `styles/`: SCSS styles go here
-       * `templates/`: The html templates go here
-       * `vendor/`: For Third-party libraries
-     * `test/`:
-       * `mock/`: Unit testing mocks
-       * `spec/`: The actual test specs
-    * `server/`:
-      * `app/`: The back end of the app (using express.js)
-        * `server.js`: Server logic (will eventually be split into sep. directories for routes, etc.)
-        * `start.js`: Quick start script that loads, inits, and starts the server from `server.js`
-      * `test/`:
-        * `mock/`: Unit testing mocks
-        * `spec/`: The actual test specs
+ * `/client/`:
+   * `app/`: The front end of the app (using Angular)
+     * `index.html`: The single page that is served to the browser
+     * `scripts/`:
+       * `app.js`: The main angular app/module logic
+       * `controllers/`: Angular controllers
+       * `directives/`: Angular directives
+       * etc.
+     * `styles/`: SCSS styles go here
+     * `templates/`: The html templates go here
+     * `vendor/`: For Third-party libraries
+   * `test/`:
+     * `mock/`: Unit testing mocks
+     * `spec/`: The actual test specs
+  * `/server/`:
+    * `app/`: The back end of the app (using express.js)
+      * `server.js`: Server logic (will eventually be split into sep. directories for routes, etc.)
+      * `start.js`: Quick start script that loads, inits, and starts the server from `server.js`
+    * `test/`:
+      * `mock/`: Unit testing mocks
+      * `spec/`: The actual test specs
 
 ### Deploying to Heroku
 
