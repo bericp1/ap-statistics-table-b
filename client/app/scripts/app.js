@@ -2,12 +2,12 @@
 
   'use strict';
 
-  angular.module('app-name-here', ['compiled-templates'])
+  angular.module('random-from-table-b', ['compiled-templates'])
     .config(function ($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: 'templates/test.html',
-          controller: 'TestCtrl'
+          templateUrl: 'templates/main.html',
+          controller: 'MainCtrl'
         })
         .otherwise({
           redirectTo: '/'

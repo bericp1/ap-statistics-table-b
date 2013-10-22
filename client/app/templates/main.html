@@ -1,0 +1,17 @@
+<div class="well">
+<h2>Random Number (from Table B) Collector and Uniqifier</h2>
+
+  <span>My min is </span>
+  <input type="text" ng-model="min" class="in-text">
+  <span>, my max is </span>
+  <input type="text" ng-model="max" class="in-text">
+  <span> and I need </span>
+  <input type="text" ng-model="n" class="in-text">
+  <span> more numbers. </span>
+  <br>
+  <input type="text" ng-model="entry" on-enter="parse()" ng-disabled="n < 1">
+
+  <ul>
+    <li ng-repeat="num in unumbers">{{num}}</li>
+  </ul>
+</div>

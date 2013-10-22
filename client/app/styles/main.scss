@@ -1,1 +1,39 @@
 @import "compass_twitter_bootstrap_awesome";
+
+body{
+  text-align: center;
+  ul{
+    list-style: none;
+    li{
+      display: inline-block;
+      height: 30px;
+      width: auto;
+      font-weight: bold;
+      font-size: 24px;
+      font-family: monospace;
+      margin: 8px;
+    }
+  }
+  .in-text{
+    display: inline-block;
+    height: 20px;
+    width: 40px;
+    font-size: 18px;
+    vertical-align: baseline;
+    text-align: center;
+  }
+  span{
+    font-size: 18px;
+  }
+  &> div{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 700px;
+  }
+  h2{
+    margin-bottom: 30px;
+  }
+  input[ng-model=entry]{
+    margin-top: 30px;
+  }
+}

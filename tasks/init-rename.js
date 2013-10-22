@@ -5,7 +5,7 @@ module.exports = function (grunt) {
   var appConf = require('../app.conf.js');
   grunt.registerTask(
     'init-rename',
-    'Renames the app from \'app-name-here\' to whatever the user inputs.',
+    'Renames the app from \'random-from-table-b\' to whatever the user inputs.',
     function(){
 			prompt.message = '';
 			prompt.delimeter = '';
