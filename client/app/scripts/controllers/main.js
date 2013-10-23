@@ -13,7 +13,7 @@ angular.module('random-from-table-b').controller('MainCtrl', function($scope){
     }
     if($scope.entry >= $scope.min && $scope.entry <= $scope.max && $.inArray(parseFloat($scope.entry), $scope.unumbers) === -1){
       $scope.unumbers.push(parseFloat($scope.entry));
-      $scope.unumbers.sort();
+      $scope.unumbers.sort(function(a,b){return a-b;});
       $scope.entry = '';
       $scope.n--;
       //TODO Show red flash or something to indicate not unique in range
