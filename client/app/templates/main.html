@@ -13,7 +13,7 @@
   <span>Start typing numbers from the row in Table B and I'll keep an ordered list of all of the unique values broken into the right number of digits within 
 the range you specified above.</span>
   <br>
-  <input type="text" ng-model="entry" on-enter="parse()" on-keyup="parse(true)" ng-disabled="n < 1">
+  <input type="tel" ng-model="entry" on-enter="parse()" on-keyup="parse(true)" ng-disabled="n < 1">
   <ul>
     <li ng-repeat="num in unumbers">{{num}}</li>
   </ul><br><br>

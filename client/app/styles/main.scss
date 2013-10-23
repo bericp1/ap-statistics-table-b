@@ -1,6 +1,9 @@
 @import "compass_twitter_bootstrap_awesome";
 
 body{
+  .container{
+    width:auto;
+  }
   text-align: center;
   ul{
     list-style: none;
@@ -30,7 +33,9 @@ body{
   &> div:first-child{
     margin: 0 auto;
     margin-top: 100px;
-    width: 700px;
+    width: 64%;
+    padding:0;
+    @media only screen and (max-device-width: 480px) {width:100%;}
   }
   h2{
     margin-bottom: 30px;
@@ -40,9 +45,10 @@ body{
   }
   #credits{
     text-align: center;
-    width: 500px;
+    width: 30%;
     margin: 0 auto;
     margin-top: 30px;
     font-family: monospace;
+    @media only screen and (max-device-width: 480px) {width:100%;}
   }
 }
