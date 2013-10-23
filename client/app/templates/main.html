@@ -1,17 +1,21 @@
+<h2>Table B Number Collector and Uniquifier</h2>
 <div class="well">
-<h2>Random Number (from Table B) Collector and Uniqifier</h2>
-
   <span>My min is </span>
   <input type="text" ng-model="min" class="in-text">
   <span>, my max is </span>
   <input type="text" ng-model="max" class="in-text">
-  <span> and I need </span>
+  <span>, and I need </span>
   <input type="text" ng-model="n" class="in-text">
-  <span> more numbers. </span>
+  <span> more </span>
+  <input type="text" ng-model="digits" class="in-text">
+  <span>-digit numbers. </span>
+  <br><br>
+  <span>Start typing numbers from the row in Table B and I'll keep an ordered list of all of the unique values broken into the right number of digits within 
+the range you specified above.</span>
   <br>
-  <input type="text" ng-model="entry" on-enter="parse()" ng-disabled="n < 1">
-
+  <input type="text" ng-model="entry" on-enter="parse()" on-keyup="parse(true)" ng-disabled="n < 1">
   <ul>
     <li ng-repeat="num in unumbers">{{num}}</li>
-  </ul>
+  </ul><br><br>
+  <span>Number of list items: {{unumbers.length}}</span>
 </div>
