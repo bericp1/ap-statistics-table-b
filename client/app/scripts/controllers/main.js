@@ -6,6 +6,13 @@ angular.module('random-from-table-b').controller('MainCtrl', function($scope){
   $scope.n   = 10;
   $scope.digits = 2;
   $scope.entry = '';
+  $scope.removeNumber = function(num){
+    var i = $.inArray(num, $scope.unumbers);
+    if( i > -1 ){
+      $scope.unumbers.splice(i, 1);
+      $scope.n++;
+    }
+  };
   $scope.parse = function(onlyIfDigits){
     onlyIfDigits = !!onlyIfDigits;
     if(onlyIfDigits && !($scope.entry.length >= $scope.digits)){
